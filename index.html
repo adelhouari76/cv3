@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية | [اسمك]</title>
+	<script src="https://cdn.counter.dev/script.js" data-id="33671ad4-a966-4a52-b48f-56c92d10a678" data-utcoffset="1"></script>
+    <style>
+        /* تنسيقات أساسية */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            direction: rtl;
+            color: #333;
+        }
+
+        /* تنسيق العناوين */
+        h1, h2, h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #3498db;
+        }
+
+        /* تنسيق المعلومات الشخصية */
+        .personal-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        /* تنسيق القسم الرئيسي */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* تنسيق القوائم */
+        .skills-list, .projects-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-item, .project-item {
+            padding: 15px;
+            background-color: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-level {
+            width: 100px;
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-level-bar {
+            height: 100%;
+            background-color: #3498db;
+            transition: width 0.3s ease;
+        }
+
+        /* تنسيق المشاريع */
+        .project-item {
+            padding: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background-color: #e3f2fd;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            color: #1976d2;
+        }
+
+        /* تنسيق التعليم */
+        .education-item {
+            padding: 15px;
+            background-color: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .education-item h4 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        /* تنسيق المهارات اللغوية */
+        .language-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .language-item {
+            text-align: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* تنسيق النشاطات الإضافية */
+        .activities-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .activity-item {
+            padding: 15px;
+            background-color: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* تنسيق الأزرار التفاعلية */
+        .cv-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cv-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* تنسيق الشريط الجانبي */
+        .sidebar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-button {
+            padding: 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* تنسيق الشريط الجانبي للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: static;
+                transform: none;
+                margin-top: 20px;
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- الشريط الجانبي -->
+        <div class="sidebar">
+            <button class="sidebar-button" onclick="scrollToSection('personal')">
+                معلومات شخصية
+            </button>
+            <button class="sidebar-button" onclick="scrollToSection('skills')">
+                المهارات
+            </button>
+            <button class="sidebar-button" onclick="scrollToSection('projects')">
+                المشاريع
+            </button>
+            <button class="sidebar-button" onclick="scrollToSection('education')">
+                التعليم
+            </button>
+            <button class="sidebar-button" onclick="scrollToSection('languages')">
+                اللغات
+            </button>
+            <button class="sidebar-button" onclick="scrollToSection('activities')">
+                النشاطات
+            </button>
+        </div>
+
+        <!-- المعلومات الشخصية -->
+        <section id="personal" class="personal-info">
+            <h2>المعلومات الشخصية</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>الاسم الكامل</h3>
+                    <p>[هوار عابد]</p>
+                </div>
+                <div class="contact-item">
+                    <h3>البريد الإلكتروني</h3>
+                    <p>[amine1234567890ho@gmail.com]</p>
+                </div>
+                <div class="contact-item">
+                    <h3>الهاتف</h3>
+                    <p>[+213696862012]</p>
+                </div>
+                <div class="contact-item">
+                    <h3>الموقع الشخصي</h3>
+                    <p>[amine1234567890ho@gmail.com]</p>
+                </div>
+                <div class="contact-item">
+                    <h3>حساب GitHub</h3>
+                    <p>[https://github.com/adelhouari76/cv3]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- المهارات -->
+        <section id="skills" class="main-content">
+            <h2>المهارات التقنية</h2>
+            <ul class="skills-list">
+                <li class="skill-item">
+                    <span>HTML5</span>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" style="width: 90%"></div>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <span>CSS3</span>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" style="width: 85%"></div>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <span>JavaScript</span>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" style="width: 80%"></div>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <span>React</span>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" style="width: 75%"></div>
+                    </div>
+                </li>
+                <li class="skill-item">
+                    <span>Node.js</span>
+                    <div class="skill-level">
+                        <div class="skill-level-bar" style="width: 70%"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- المشاريع -->
+        <section id="projects" class="main-content">
+            <h2>المشاريع</h2>
+            <ul class="projects-list">
+                <li class="project-item">
+                    <h3>قائمة المهام</h3>
+                    <p>تطبيق قائمة مهام تفاعلي باستخدام HTML وCSS وJavaScript</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </li>
+                <li class="project-item">
+                    <h3>السيرة الذاتية التفاعلية</h3>
+                    <p>سيرة ذاتية تفاعلية مع تصميم متجاوب وواجهة مستخدم عربية</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- التعليم -->
+        <section id="education" class="main-content">
+            <h2>التعليم</h2>
+            <ul class="education-list">
+                <li class="education-item">
+                    <h3>دورة تطوير الويب</h3>
+                    <p>دورة شاملة في تطوير الويب مع التركيز على HTML وCSS وJavaScript</p>
+                </li>
+                <li class="education-item">
+                    <h3>دورة React</h3>
+                    <p>دورة متخصصة في إطار React وتطبيقات الويب الحديثة</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- اللغات -->
+        <section id="languages" class="main-content">
+            <h2>اللغات</h2>
+            <div class="language-skills">
+                <div class="language-item">
+                    <h3>العربية</h3>
+                    <p>اللغة الأم</p>
+                </div>
+                <div class="language-item">
+                    <h3>الإنجليزية</h3>
+                    <p>جيد</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- النشاطات الإضافية -->
+        <section id="activities" class="main-content">
+            <h2>النشاطات الإضافية</h2>
+            <ul class="activities-list">
+                <li class="activity-item">
+                    <h3>المساهمة في مشاريع GitHub</h3>
+                    <p>المشاركة في تطوير مشاريع مفتوحة المصدر على منصة GitHub</p>
+                </li>
+                <li class="activity-item">
+                    <h3>كت    <!-- النشاطات الإضافية -->
+<section id="activities" class="main-content">
+    <h2>النشاطات الإضافية</h2>
+    <ul class="activities-list">
+        <li class="activity-item">
+            <h3>المساهمة في مشاريع GitHub</h3>
+            <p>المشاركة في تطوير مشاريع مفتوحة المصدر على منصة GitHub</p>
+        </li>
+        <li class="activity-item">
+            <h3>كتابة مقالات تقنية</h3>
+            <p>كتابة مقالات عن التقنيات البرمجية الحديثة وتجارب التطوير</p>
+        </li>
+        <li class="activity-item">
+            <h3>المشاركة في المجتمع التقني</h3>
+            <p>المشاركة في مناقشات المطورين وتقديم المساعدة للآخرين</p>
+        </li>
+    </ul>
+</section>
+
+<!-- زر تحميل السيرة الذاتية -->
+<div class="cv-button-container">
+    <a href="#" class="cv-button">تحميل السيرة الذاتية</a>
+</div>
+</div>
+
+<script>
+    // دالة التمرير السلس إلى القسم المطلوب
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    // دالة تحميل البيانات من localStorage
+    function loadFromLocalStorage() {
+        const savedData = localStorage.getItem('cvData');
+        if (savedData) {
+            const data = JSON.parse(savedData);
+            // تحديث البيانات في الصفحة
+            document.querySelectorAll('.contact-item p').forEach((element, index) => {
+                if (data.contactDetails[index]) {
+                    element.textContent = data.contactDetails[index];
+                }
+            });
+        }
+    }
+
+    // دالة حفظ البيانات في localStorage
+    function saveToLocalStorage() {
+        const contactDetails = Array.from(document.querySelectorAll('.contact-item p'))
+            .map(element => element.textContent);
+        
+        const data = {
+            contactDetails: contactDetails
+        };
+        
+        localStorage.setItem('cvData', JSON.stringify(data));
+    }
+
+    // تحميل البيانات عند بدء الصفحة
+    window.onload = function() {
+        loadFromLocalStorage();
+    };
+
+    // حفظ التغييرات عند تحديث أي معلومات
+    document.querySelectorAll('.contact-item p').forEach(element => {
+        element.addEventListener('input', saveToLocalStorage);
+    });
+</script>
+</body>
+</html>
